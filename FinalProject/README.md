@@ -5,7 +5,7 @@ This is a machine learning model api built with fastapi for predicting weather. 
 * temp_max
 * temp_min
 
-*** The input must be in that order for the model to work properly ***
+***The input must be in that order for the model to work properly***
 
 This api can be tested with Postman using 'Post' method with the following url: http://127.0.0.1:8000/predict
 
