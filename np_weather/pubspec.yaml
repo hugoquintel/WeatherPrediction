@@ -22,42 +22,68 @@ version: 1.0.0+1
 environment:
   sdk: '>=2.18.6 <3.0.0'
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
 dependencies:
+  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  geocoding: ^2.0.5
+  geolocator: ^8.2.0
+  get: ^4.6.0
+  google_fonts: ^3.0.1
+  http: ^0.13.0
+  iconsax: ^0.0.8
+  intl: ^0.18.0
+  sleek_circular_slider: ^2.0.1
 
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
-
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/weather/01d.png
+    - assets/weather/01n.png
+    - assets/weather/02d.png
+    - assets/weather/02n.png
+    - assets/weather/03d.png
+    - assets/weather/03n.png
+    - assets/weather/04d.png
+    - assets/weather/04n.png
+    - assets/weather/09d.png
+    - assets/weather/09n.png
+    - assets/weather/10d.png
+    - assets/weather/10n.png
+    - assets/weather/11d.png
+    - assets/weather/11n.png
+    - assets/weather/13d.png
+    - assets/weather/13n.png
+    - assets/weather/50d.png
+    - assets/weather/50n.png
+
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: assets/font/NotoSans/NotoSans-Black.ttf
+        - asset: assets/font/NotoSans/NotoSans-BlackItalic.ttf
+        - asset: assets/font/NotoSans/NotoSans-Bold.ttf
+        - asset: assets/font/NotoSans/NotoSans-BoldItalic.ttf
+        - asset: assets/font/NotoSans/NotoSans-ExtraBold.ttf
+        - asset: assets/font/NotoSans/NotoSans-ExtraBoldItalic.ttf
+        - asset: assets/font/NotoSans/NotoSans-ExtraLight.ttf
+        - asset: assets/font/NotoSans/NotoSans-ExtraLightItalic.ttf
+        - asset: assets/font/NotoSans/NotoSans-Italic.ttf
+        - asset: assets/font/NotoSans/NotoSans-Light.ttf
+        - asset: assets/font/NotoSans/NotoSans-LightItalic.ttf
+        - asset: assets/font/NotoSans/NotoSans-Medium.ttf
+        - asset: assets/font/NotoSans/NotoSans-MediumItalic.ttf
+        - asset: assets/font/NotoSans/NotoSans-Regular.ttf
+        - asset: assets/font/NotoSans/NotoSans-SemiBold.ttf
+        - asset: assets/font/NotoSans/NotoSans-SemiBoldItalic.ttf
+        - asset: assets/font/NotoSans/NotoSans-Thin.ttf
+        - asset: assets/font/NotoSans/NotoSans-ThinItalic.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
