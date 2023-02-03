@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:get/get.dart';
+import 'package:np_weather/api/fetch_weather.dart';
 import 'package:np_weather/model/weatherdaily_data.dart';
 import 'package:np_weather/utils/app_colors.dart';
 import 'package:np_weather/utils/app_textstyle.dart';
+import 'package:np_weather/widget/prediction_widget.dart';
 
 class DailyDataForecast extends StatelessWidget {
   final WeatherDataDaily weatherDataDaily;
@@ -51,6 +54,13 @@ class DailyDataForecast extends StatelessWidget {
             ? 8
             : weatherDataDaily.daily.length,
         itemBuilder: ((context, index) {
+          int tmax = weatherDataDaily.daily[index].temp!.max!;
+          int tmin = weatherDataDaily.daily[index].temp!.min!;
+          double windSpeed = weatherDataDaily.daily[index].windSpeed!;
+          double? precipitation = weatherDataDaily.daily[index].rain;
+          if (precipitation == null) {
+            precipitation = 0;
+          }
           String tempmax = "${weatherDataDaily.daily[index].temp!.max}°/";
           String tempmin = "${weatherDataDaily.daily[index].temp!.min}°";
           String getday = getDay(weatherDataDaily.daily[index].dt);
@@ -69,19 +79,40 @@ class DailyDataForecast extends StatelessWidget {
                         style: AppTextstyle.b2Medium,
                       ),
                     ),
+                    /*
                     SizedBox(
                       width: 30,
                       height: 30,
                       child: Image.asset(
                           "assets/weather/${weatherDataDaily.daily[index].weather![0].icon}.png"),
                     ),
+                    */
+                    SizedBox(
+                      width: 70,
+                      height: 30,
+                      child: PredictionWidget(
+                        precipitation: precipitation,
+                        windspeed: windSpeed,
+                        tempmax: tmax,
+                        tempmin: tmin,
+                      ),
+                    ),
                     Text(
                       tempmax + tempmin,
                       style: AppTextstyle.b2Medium,
-                    )
+                    ),
                   ],
                 ),
               ),
+              /*Text(
+                "${precipitation} + "
+                " + ${windSpeed} + "
+                " + ${tmax} + "
+                " + ${tmin} + "
+                "",
+                style: AppTextstyle.b2Medium,
+              )
+              */
             ],
           );
         }),

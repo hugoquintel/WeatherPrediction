@@ -10,11 +10,15 @@ class WeatherDataDaily {
 class Daily {
   int? dt;
   Temp? temp;
+  double? windSpeed;
+  double? rain;
   List<Weather>? weather;
 
   Daily({
     this.dt,
     this.temp,
+    this.windSpeed,
+    this.rain,
     this.weather,
   });
 
@@ -26,11 +30,15 @@ class Daily {
         weather: (json['weather'] as List<dynamic>?)
             ?.map((e) => Weather.fromJson(e as Map<String, dynamic>))
             .toList(),
+        windSpeed: (json['wind_speed'] as num?)?.toDouble(),
+        rain: (json['rain'] as num?)?.toDouble(),
       );
 
   Map<String, dynamic> toJson() => {
         'dt': dt,
         'temp': temp?.toJson(),
+        'wind_speed': windSpeed,
+        'rain': rain,
         'weather': weather?.map((e) => e.toJson()).toList(),
       };
 }
